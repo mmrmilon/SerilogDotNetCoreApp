@@ -26,16 +26,26 @@ namespace SerilogDotNetCoreApp.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            logger.LogInformation("You are requested weather forecast data.");
-
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            logger.LogInformation("You are requested weather forecast Get call.");
+            try
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                throw new Exception("This is our demo exception");
+
+                //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                //{
+                //    Date = DateTime.Now.AddDays(index),
+                //    TemperatureC = rng.Next(-20, 55),
+                //    Summary = Summaries[rng.Next(Summaries.Length)]
+                //})
+                //.ToArray();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "We caught this exception in the Get call.");
+            }
+
+            return null;
         }
     }
 }
