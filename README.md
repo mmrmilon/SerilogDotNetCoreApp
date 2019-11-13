@@ -1,1 +1,1 @@
-# SerilogDotNetCoreApp
+# Serilog Configuration
