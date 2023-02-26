@@ -2,3 +2,10 @@
 bin/
 obj/
 /SerilogDotNetCoreApp.csproj
+/SerilogDotNetCoreApp - Backup.csproj
+*.json
+*.txt
+/Logs/log.json
+/Logs/log.txt
+/Logs/log.txt
+/Logs/log.json
