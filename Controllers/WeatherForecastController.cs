@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -30,13 +31,17 @@ namespace SerilogDotNetCoreApp.Controllers
             logger.LogInformation("You are requested weather forecast Get call.");
             try
             {
-                return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                var requestedRecords = Enumerable.Range(1, 5).Select(index => new WeatherForecast
                 {
                     Date = DateTime.Now.AddDays(index),
                     TemperatureC = rng.Next(-20, 55),
                     Summary = Summaries[rng.Next(Summaries.Length)]
                 })
                 .ToArray();
+
+                logger.LogInformation("Your requested weather forecast data: " + JsonSerializer.Serialize(requestedRecords));
+
+                return requestedRecords;
             }
             catch (Exception ex)
             {
