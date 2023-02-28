@@ -1,4 +1,4 @@
-# Structured Logging with Serilog
+# Structured Logging with Serilog & Seq
 Serilog is a feature-rich logging library in .NET that has gained popularity for its ability to log to multiple destinations, including files, the console, and other custom sinks. Serilog utilizes a variety of concepts such as sinks, enrichers, properties, and destructuring policies, among others, and offers the flexibility to configure its behavior either programmatically or through configuration files.
 
 Howeve, what sets serilog apart is its built-in support for structured logging, which is a powerful technique for capturing and analyzing log data in a format that is easy to search, filter, and analyze. For more details visit serilog [page](https://serilog.net/)
@@ -58,3 +58,11 @@ Additionally, we are able to specify further settings for the **file** sink such
     ]
   }
 ```
+# Seq
+Seq has excellent support for all of Serilog's features including complex event data, enrichment and structured events.
+# Configuring Seq
+To install Seq in an ASP.NET Core project, you can easily add the required package by using NuGet package manager.
+```csharp
+  Install-Package Serilog.Sinks.Seq
+  Install-Package Serilog.Sinks.Console
+  ```
