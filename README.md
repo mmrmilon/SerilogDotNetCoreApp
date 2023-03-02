@@ -80,6 +80,8 @@ If you installed Seq to the default port you can use "http://your-seq-server:534
       .........
     ]
   ```
+  # Seq UI
+  ![alt tag](https://github.com/mmrmilon/SerilogDotNetCoreApp/blob/master/Documents/Images/SeqEvents01.png)
 
 
 
