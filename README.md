@@ -66,3 +66,34 @@ To install Seq in an ASP.NET Core project, you can easily add the required packa
   Install-Package Serilog.Sinks.Seq
   Install-Package Serilog.Sinks.Console
   ```
+# Configuring Appsettings.json
+If you installed Seq to the default port you can use "http://your-seq-server:5341" as the Seq address.
+```csharp
+  "WriteTo": [      
+      {
+        "Name": "Seq",
+        "Application": "SerilogDotNetCoreApp",
+        "Args": {
+          "serverUrl": "http://localhost:5341"
+        }
+      },
+      .........
+    ]
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
