@@ -10,7 +10,7 @@ To install Serilog in an ASP.NET Core project, you can easily add the required p
   ```
 The most versatile approach for configuring Serilog is by utilizing application settings, which can be easily accomplished by invoking the <code>ReadFrom.Configuration()</code> method. This allows for centralized management of Serilog's configuration and simplifies the process of adjusting logging behavior.
 
-To enable logging with Serilog, we can modify the program.cs file and add the necessary code to configure and initialize Serilog. This will allow us to start capturing and processing log events using Serilog's various sinks and enrichers.
+To enable logging with Serilog, we can modify the **program.cs** file and add the necessary code to configure and initialize Serilog. This will allow us to start capturing and processing log events using Serilog's various sinks and enrichers.
 ```csharp
   var logger = new LoggerConfiguration()
       .ReadFrom.Configuration(builder.Configuration)
